@@ -1,11 +1,9 @@
 ﻿#!/bin/bash
 
-
 #Declare Cisco suffixes
 ARRAY=( 'enta' 'entb' 'com01' 'com02' 'com03' 'adm01' 'adm02')
 # get number of elements in the array
 ELEMENTS=${#ARRAY[@]}
-
 
 COUNT=$#
 # Site Loop
