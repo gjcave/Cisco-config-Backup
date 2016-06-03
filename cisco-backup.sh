@@ -10,10 +10,10 @@ COUNT=$#
 for f in $@; do
 #       nested loop for devices
         for (( i=0;i<$ELEMENTS;i++)); do
-            IP=`dig +short  $f'-'${ARRAY[${i}]}'.lyondell.com'`
+            IP=`dig +short  $f'-'${ARRAY[${i}]}'.cannonical.com'`
             if [ -n "$IP" ]; then
                echo $f'-'${ARRAY[${i}]}
-               sshpass -f /home/gcave/.keys/lbpw scp -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no a_gxcave@$f'-'${ARRAY[${i}]}:system:running-config /home/gcave/tftp/router_switch/$f'-'${ARRAY[${i}]}
+               sshpass -f /home/user/.keys/lbpw scp -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no a_ltorvalds@$f'-'${ARRAY[${i}]}:system:running-config /home/ltorvalds/tftp/router_switch/$f'-'${ARRAY[${i}]}
             fi
         done
    let COUNT=COUNT-1
